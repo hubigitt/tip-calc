@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- displays site properly based on user's device -->
+
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./images/favicon-32x32.png"
+        />
+        <link rel="stylesheet" href="styles/styles.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+        <script src="/scripts/scripts.js" defer></script>
+        <title>Frontend Mentor | Tip calculator app</title>
+    </head>
+    <body>
+        <section class="main">
+            <div class="title">
+                <h1>SPLI</br>TTER</h1>
+            </div>
+            <section class="app">
+                <section class="input-part">
+                    <div class="bill">
+                        <label class="label" for="bill">Bill</label>
+                        <input class="bill-input" type="number" placeholder="0" />
+                        <img class="icon" src="/images/icon-dollar.svg" alt="">
+                    </div>
+                    <div class="select-tip">
+                        <p class="label">Select Tip %</p>
+                        <ul class="percent-list">
+                            <li class="list-item">
+                            <button id="5" class="btn a">5%</button>
+                            </li>
+                            <li class="list-item">
+                                <button id="10" id="ten" class="btn b">10%</button>
+                            </li>
+                            <li class="list-item">
+                                <button id="15" id="fifteen" class="btn c">15%</button>
+                            </li>
+                            <li class="list-item">
+                                <button id="25" id="twenty-five" class="btn d">25%</button>
+                            </li>
+                            <li class="list-item">
+                                <button id="50" id="fifty" class="btn e">50%</button>
+                            </li>
+                            <li class="list-item">
+                                <button id="custom" id="custom" class="custom-btn btn f">Custom</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="num-ppl">
+                        <label class="label" for="num-o-ppl">Number of People</label>
+                        <input class='num-ppl-input' type="number" name="num-o-ppl" placeholder="0" />
+                        <img class="icon" src="/images/icon-person.svg" alt="">
+                    </div>
+                </section>
+                <section class="output-part">
+                    <div class="tip">
+                        <div class="tip-amount">
+                            <p>Tip Amount</p>
+                            <h6>/ person</h6>
+                        </div>
+                        <h2 id="tip-result">$0.00</h2>
+                    </div>
+                    <div class="total">
+                        <div class="total-amount">
+                            <p>Total</p>
+                            <h6>/ person</h6>
+                        </div>
+                        <h2 id="total-result">$0.00</h2>
+                    </div>
+                    <button class="reset-btn">RESET</button>
+                </section>
+        </section>
+    </section>
+    </body>
+</html>

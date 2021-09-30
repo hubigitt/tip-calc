@@ -1,0 +1,9 @@
+.main {
+    background-color: $background;
+    min-height: 100vh;
+    @include flex(space-around, center, column);
+    h1 {
+        color: $v-dark-cyan;
+        letter-spacing: 1rem;
+    }
+}

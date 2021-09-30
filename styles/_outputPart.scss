@@ -1,0 +1,100 @@
+.output-part {
+    flex: 1 1 30rem;
+    background: $v-dark-cyan;
+    border-radius: 1rem;
+    min-height: 60vh;
+    position: relative;
+    .tip {
+        display: flex;
+        justify-content: space-between;
+        padding: 2rem 1.5rem 2rem 1.5rem;
+        .tip-amount {
+            p {
+                font-size: 24px;
+                color: $white;
+            }
+            h6 {
+                font-size: 18px;
+                color: $darker-grayish-cyan;
+            }
+        }
+        h2 {
+            color: $strong-cyan;
+        }
+    }
+    .total {
+        display: flex;
+        justify-content: space-between;
+        padding: 2rem 1.5rem 2rem 1.5rem;
+        .total-amount {
+            p {
+                font-size: 24px;
+                color: $white;
+            }
+            h6 {
+                font-size: 18px;
+                color: $darker-grayish-cyan;
+            }
+        }
+        h2 {
+            color: $strong-cyan;
+        }
+    }
+    .reset-btn {
+        opacity: 25%;
+        font-family: $font-family;
+        font-size: 18px;
+        font-weight: bold;
+        color: $darker-grayish-cyan;
+        width: 80%;
+        background: $dark-grayish-cyan;
+        border: none;
+        border-radius: 0.25rem;
+        min-height: 2.5rem;
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: 0.3s ease-in-out;
+    }
+    .reset-btn:hover {
+        background: $light-grayish-cyan;
+        cursor: pointer;
+        color: $v-dark-cyan;
+        opacity: 75%;
+    }
+}
+
+@media (min-width: 375px) and (max-width: 1025px) {
+    .output-part {
+        margin: 0.5rem;
+        min-height: 45vh;
+        margin-bottom: 2rem;
+        padding: 1rem;
+        .total {
+            padding: 1rem;
+            .total-amount {
+                p {
+                    font-size: 20px;
+                }
+                h6 {
+                    font-size: 14px;
+                }
+            }
+        }
+        .tip {
+            padding: 1rem;
+            .tip-amount {
+                p {
+                    font-size: 20px;
+                }
+                h6 {
+                    font-size: 14px;
+                }
+            }
+        }
+        .reset-btn {
+            min-height: 3.5rem;
+        }
+    }
+}

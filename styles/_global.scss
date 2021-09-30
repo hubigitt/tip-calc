@@ -1,0 +1,34 @@
+$strong-cyan: hsl(172, 67%, 45%);
+
+$v-dark-cyan: hsl(183, 100%, 15%);
+$darker-grayish-cyan: hsl(186, 14%, 43%);
+$dark-grayish-cyan: hsl(184, 14%, 56%);
+$light-grayish-cyan: hsl(185, 41%, 84%);
+$lighter-grayish-cyan: hsl(189, 41%, 97%);
+$white: hsl(0, 0%, 100%);
+
+$background: rgb(197, 228, 231);
+
+$font-size: 24px;
+$font-family: "Space Mono", monospace;
+
+$mobile-width: 375px;
+$desktop-width: 1440px;
+
+@mixin flex($justify, $align, $direction) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+body {
+    font-size: 24px;
+    font-family: $font-family;
+}
