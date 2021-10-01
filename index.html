@@ -30,7 +30,7 @@
                 <section class="input-part">
                     <div class="bill">
                         <label class="label" for="bill">Bill</label>
-                        <input class="bill-input" type="number" placeholder="0" />
+                        <input class="bill-input" type="number" placeholder="0" min="0"/>
                         <img class="icon" src="/images/icon-dollar.svg" alt="">
                     </div>
                     <div class="select-tip">
@@ -40,25 +40,25 @@
                             <button id="5" class="btn a">5%</button>
                             </li>
                             <li class="list-item">
-                                <button id="10" id="ten" class="btn b">10%</button>
+                                <button class="btn b">10%</button>
                             </li>
                             <li class="list-item">
-                                <button id="15" id="fifteen" class="btn c">15%</button>
+                                <button  class="btn c"  >15%</button>
                             </li>
                             <li class="list-item">
-                                <button id="25" id="twenty-five" class="btn d">25%</button>
+                                <button  class="btn d">25%</button>
                             </li>
                             <li class="list-item">
-                                <button id="50" id="fifty" class="btn e">50%</button>
+                                <button class="btn e">50%</button>
                             </li>
                             <li class="list-item">
-                                <button id="custom" id="custom" class="custom-btn btn f">Custom</button>
+                                <button id="custom" class="custom-btn btn f">Custom</button>
                             </li>
                         </ul>
                     </div>
                     <div class="num-ppl">
                         <label class="label" for="num-o-ppl">Number of People</label>
-                        <input class='num-ppl-input' type="number" name="num-o-ppl" placeholder="0" />
+                        <input class='num-ppl-input' type="number" name="num-o-ppl" placeholder="0" min="0" />
                         <img class="icon" src="/images/icon-person.svg" alt="">
                     </div>
                 </section>
