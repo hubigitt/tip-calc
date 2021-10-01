@@ -13,16 +13,13 @@ class Splitter {
         this.result = 0;
     }
 
-    calculate(billValue, numPplValue, percent) {
-        percent = this.percent || DEFAULT_TIP;
+    calculate(billValue, numPplValue) {
         billValue = this.bill.value || 0;
         numPplValue = this.numPpl.value || 0;
-        let tipResult =
-            billValue / numPplValue / this.buttonClickHandler(percent);
-        console.log(this.buttonClickHandler);
+        let tipResult = billValue / numPplValue / DEFAULT_TIP;
         let totalResult = billValue / numPplValue + tipResult;
         if (numPplValue === 0) {
-            resultTip.innerHTML = `$${billValue / percent}`;
+            resultTip.innerHTML = `$${billValue / DEFAULT_TIP}`;
             resultTotal.innerHTML = 0;
         } else {
             resultTotal.innerHTML = `$${totalResult.toFixed(2)}`;
