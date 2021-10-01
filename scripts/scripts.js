@@ -3,50 +3,62 @@ const numPplInput = document.querySelector(".num-ppl-input");
 const tipButtons = document.querySelectorAll(".btn");
 const resultTotal = document.getElementById("total-result");
 const resultTip = document.getElementById("tip-result");
-const DEFAULT_TIP = 10;
 
 class Splitter {
-    constructor(bill, numPpl, percent) {
-        this.bill = bill;
-        this.numPpl = numPpl;
-        this.percent = percent;
-        this.result = 0;
-    }
+	percent = 10;
+	bill = 0;
+	peopleAmount = 0;
 
-    calculate(billValue, numPplValue) {
-        billValue = this.bill.value || 0;
-        numPplValue = this.numPpl.value || 0;
-        let tipResult = billValue / numPplValue / DEFAULT_TIP;
-        let totalResult = billValue / numPplValue + tipResult;
-        if (numPplValue === 0) {
-            resultTip.innerHTML = `$${billValue / DEFAULT_TIP}`;
-            resultTotal.innerHTML = 0;
-        } else {
-            resultTotal.innerHTML = `$${totalResult.toFixed(2)}`;
-            resultTip.innerHTML = `$${tipResult.toFixed(2)}`;
-        }
-    }
+	buttonClickHandler(event) {
+		this.percent = parseInt(event.target.id);
+		this.calculate();
+	}
 
-    buttonClickHandler(percent) {
-        this.percent = percent;
-        percent = parseInt(this.id);
+	calculate() {
+		if (this.bill === 0 || this.peopleAmount === 0 || this.percent === 0) {
+			return;
+		}
+		const tipResult = this.bill / this.peopleAmount / this.percent;
+		const totalResult = this.bill / this.peopleAmount + tipResult;
+		resultTotal.innerHTML = `$${totalResult.toFixed(2)}`;
+		resultTip.innerHTML = `$${tipResult.toFixed(2)}`;
+	}
 
-        console.log(percent);
+	setTipPercentage(tipInPercent) {
+		this.percent = tipInPercent;
+		this.calculate();
+	}
 
-        return percent;
-    }
+	setBill(bill) {
+		this.bill = bill;
+		this.calculate();
+	}
 
-    // reset() {
-    //     this.currentBill = 0;
-    //     this.numPpl = 0;
-    //     this.selectedTip = undefined;
-    // }
+	setPeopleAmount(peopleAmount) {
+		this.peopleAmount = peopleAmount;
+		this.calculate();
+	}
 }
 
-const splitter = new Splitter(billInput, numPplInput);
+const splitter = new Splitter();
 
-billInput.addEventListener("input", splitter.calculate.bind(splitter));
-numPplInput.addEventListener("input", splitter.calculate.bind(splitter));
+function toggleClickTipPercentage(event) {
+	const percent = parseInt(event.target.innerText.split("%")[0]);
+	splitter.setTipPercentage(percent);
+}
+
+function toggleBill(event) {
+	const bill = parseInt(event.target.value);
+	splitter.setBill(bill);
+}
+
+function toggleSetPeopleAmount(event) {
+	const peopleAmount = parseInt(event.target.value);
+	splitter.setPeopleAmount(peopleAmount);
+}
+
+billInput.addEventListener("input", toggleBill);
+numPplInput.addEventListener("input", toggleSetPeopleAmount);
 tipButtons.forEach((btn) => {
-    btn.addEventListener("click", splitter.buttonClickHandler);
+	btn.addEventListener("click", toggleClickTipPercentage);
 });
