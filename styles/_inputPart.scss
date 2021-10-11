@@ -79,7 +79,7 @@
 .input::after {
     content: url(/images/icon-dollar.svg);
 }
-input {
+.input {
     background: $light-grayish-cyan;
     width: 100%;
     border: none;
@@ -90,13 +90,13 @@ input {
     text-align: right;
     transition: 0.1s;
 }
-input::placeholder {
+.input::placeholder {
     position: absolute;
     right: 5%;
     top: 50%;
     transform: translateY(-50%);
 }
-input:hover {
+.input:hover {
     cursor: pointer;
     border: 3px solid $strong-cyan;
 }
