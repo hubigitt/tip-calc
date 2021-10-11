@@ -204,7 +204,7 @@ body {
   content: url(/images/icon-dollar.svg);
 }
 
-input {
+.input {
   background: #c5e4e7;
   width: 100%;
   border: none;
@@ -217,7 +217,7 @@ input {
   transition: 0.1s;
 }
 
-input::-webkit-input-placeholder {
+.input::-webkit-input-placeholder {
   position: absolute;
   right: 5%;
   top: 50%;
@@ -225,21 +225,21 @@ input::-webkit-input-placeholder {
           transform: translateY(-50%);
 }
 
-input:-ms-input-placeholder {
+.input:-ms-input-placeholder {
   position: absolute;
   right: 5%;
   top: 50%;
   transform: translateY(-50%);
 }
 
-input::-ms-input-placeholder {
+.input::-ms-input-placeholder {
   position: absolute;
   right: 5%;
   top: 50%;
   transform: translateY(-50%);
 }
 
-input::placeholder {
+.input::placeholder {
   position: absolute;
   right: 5%;
   top: 50%;
@@ -247,7 +247,7 @@ input::placeholder {
           transform: translateY(-50%);
 }
 
-input:hover {
+.input:hover {
   cursor: pointer;
   border: 3px solid #26c0ab;
 }
