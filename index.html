@@ -26,39 +26,41 @@
             <div class="title">
                 <h1>SPLI</br>TTER</h1>
             </div>
+            <form action="">
             <section class="app">
                 <section class="input-part">
                     <div class="bill">
                         <label class="label" for="bill">Bill</label>
-                        <input class="bill-input" type="number" placeholder="0" min="0"/>
+                        <input class="bill-input input" type="number" placeholder="0" min="0"/>
                         <img class="icon" src="/images/icon-dollar.svg" alt="">
                     </div>
                     <div class="select-tip">
                         <p class="label">Select Tip %</p>
                         <ul class="percent-list">
                             <li class="list-item">
-                            <button id="5" class="btn a">5%</button>
+                                <button type="button" id="5" class="btn a">5%</button>
                             </li>
                             <li class="list-item">
-                                <button class="btn b">10%</button>
+                                <button type="button" class="btn b">10%</button>
                             </li>
                             <li class="list-item">
-                                <button  class="btn c"  >15%</button>
+                                <button type="button"  class="btn c"  >15%</button>
                             </li>
                             <li class="list-item">
-                                <button  class="btn d">25%</button>
+                                <button type="button" class="btn d">25%</button>
                             </li>
                             <li class="list-item">
-                                <button class="btn e">50%</button>
+                                <button type="button" class="btn e">50%</button>
                             </li>
                             <li class="list-item">
-                                <button id="custom" class="custom-btn btn f">Custom</button>
+                                <!-- <button class="custom-btn btn">custom</button> -->
+                                <input id='custom-percentage-input' class="f input" type="number" name="custom-percent" placeholder="Custom">
                             </li>
                         </ul>
                     </div>
                     <div class="num-ppl">
                         <label class="label" for="num-o-ppl">Number of People</label>
-                        <input class='num-ppl-input' type="number" name="num-o-ppl" placeholder="0" min="0" />
+                        <input class='num-ppl-input input' type="number" name="num-o-ppl" placeholder="0" min="0" />
                         <img class="icon" src="/images/icon-person.svg" alt="">
                     </div>
                 </section>
@@ -77,7 +79,8 @@
                         </div>
                         <h2 id="total-result">$0.00</h2>
                     </div>
-                    <button class="reset-btn">RESET</button>
+                    <button type="submit" class="reset-btn">RESET</button>
+                </form>
                 </section>
         </section>
     </section>
