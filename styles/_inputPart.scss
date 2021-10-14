@@ -56,15 +56,17 @@
     color: $v-dark-cyan;
     background: $strong-cyan;
 }
-.custom-btn {
-    background: $light-grayish-cyan;
-    color: $darker-grayish-cyan;
+.btn-active {
+    color: $v-dark-cyan;
+    background: $strong-cyan;
     font-weight: bold;
 }
-.selected {
-    background: $strong-cyan;
-    color: $v-dark-cyan;
-}
+
+// .custom-btn {
+//     background: $light-grayish-cyan;
+//     color: $darker-grayish-cyan;
+//     font-weight: bold;
+// }
 
 //cos nie poszlo z nestowaniem
 .label {
@@ -99,6 +101,12 @@
 .input:hover {
     cursor: pointer;
     border: 3px solid $strong-cyan;
+}
+
+#custom-percentage-input::placeholder {
+    right: 50%;
+    transform: translate(50%, -50%);
+    font-weight: bold;
 }
 
 .icon {

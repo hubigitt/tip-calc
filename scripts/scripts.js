@@ -7,6 +7,7 @@ const resetBtn = document.querySelector(".reset-btn");
 const customPercentageInput = document.getElementById(
     "custom-percentage-input"
 );
+const selectTipSection = document.querySelector(".select-tip");
 
 class Splitter {
     percent = 10;
@@ -48,6 +49,10 @@ const splitter = new Splitter();
 
 function toggleClickTipPercentage(event) {
     const percent = parseInt(event.target.innerText.split("%")[0]);
+
+    // console.log(event.target);
+    // event.target.classList.toggle("btn-active");
+
     splitter.setTipPercentage(percent);
 }
 
@@ -69,8 +74,21 @@ function toggleCustomPercentage(event) {
 billInput.addEventListener("input", toggleBill);
 numPplInput.addEventListener("input", toggleSetPeopleAmount);
 customPercentageInput.addEventListener("input", toggleCustomPercentage);
-tipButtons.forEach((btn) => {
-    btn.addEventListener("click", toggleClickTipPercentage);
+
+// tipButtons.forEach((btn) => {
+//     btn.addEventListener("click", toggleClickTipPercentage);
+// });
+
+selectTipSection.addEventListener("click", (event) => {
+    [...tipButtons].forEach((tipButton) => {
+        const buttonClicked =
+            (event.target.id || event.target.parentNode.id) === tipButton.id;
+        if (buttonClicked) {
+            tipButton.classList.add("btn-active");
+        } else {
+            tipButton.classList.remove("btn-active");
+        }
+    });
 });
 
 console.log(resetBtn);
