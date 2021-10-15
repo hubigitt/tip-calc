@@ -164,6 +164,7 @@ body {
   cursor: pointer;
   color: #00494d;
   background: #26c0ab;
+  font-weight: bold;
 }
 
 .btn-active {
@@ -369,6 +370,13 @@ body {
   cursor: pointer;
   color: #00494d;
   opacity: 75%;
+}
+
+.output-part .btn-active {
+  color: #00494d;
+  background: #26c0ab;
+  font-weight: bold;
+  opacity: 100%;
 }
 
 @media (min-width: 375px) and (max-width: 1025px) {

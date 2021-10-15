@@ -63,6 +63,12 @@
         color: $v-dark-cyan;
         opacity: 75%;
     }
+    .btn-active {
+        color: $v-dark-cyan;
+        background: $strong-cyan;
+        font-weight: bold;
+        opacity: 100%;
+    }
 }
 
 @media (min-width: 375px) and (max-width: 1025px) {

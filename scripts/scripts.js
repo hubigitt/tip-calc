@@ -25,8 +25,21 @@ class Splitter {
         }
         const tipResult = (this.bill / this.peopleAmount / 100) * this.percent;
         const totalResult = this.bill / this.peopleAmount + tipResult;
+        this.updateOutput(tipResult, totalResult);
+        this.toggleResetButton(tipResult, totalResult);
+    }
+
+    updateOutput(tipResult, totalResult) {
         resultTotal.innerHTML = `$${totalResult.toFixed(2)}`;
         resultTip.innerHTML = `$${tipResult.toFixed(2)}`;
+    }
+
+    toggleResetButton(tipResult, totalResult) {
+        if (tipResult || totalResult) {
+            resetBtn.classList.add("btn-active");
+        } else {
+            resetBtn.classList.remove("btn-active");
+        }
     }
 
     setTipPercentage(tipInPercent) {
@@ -49,10 +62,6 @@ const splitter = new Splitter();
 
 function toggleClickTipPercentage(event) {
     const percent = parseInt(event.target.innerText.split("%")[0]);
-
-    // console.log(event.target);
-    // event.target.classList.toggle("btn-active");
-
     splitter.setTipPercentage(percent);
 }
 
@@ -74,10 +83,9 @@ function toggleCustomPercentage(event) {
 billInput.addEventListener("input", toggleBill);
 numPplInput.addEventListener("input", toggleSetPeopleAmount);
 customPercentageInput.addEventListener("input", toggleCustomPercentage);
-
-// tipButtons.forEach((btn) => {
-//     btn.addEventListener("click", toggleClickTipPercentage);
-// });
+tipButtons.forEach((btn) => {
+    btn.addEventListener("click", toggleClickTipPercentage);
+});
 
 selectTipSection.addEventListener("click", (event) => {
     [...tipButtons].forEach((tipButton) => {
@@ -90,6 +98,3 @@ selectTipSection.addEventListener("click", (event) => {
         }
     });
 });
-
-console.log(resetBtn);
-resetBtn.addEventListener("click", splitter.reset);
