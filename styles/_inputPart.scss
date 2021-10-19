@@ -103,15 +103,6 @@
     cursor: pointer;
     border: 2px solid $strong-cyan;
 }
-.invalid-input {
-    border: 2px solid red;
-}
-
-.invalid-input input::after {
-    content: "Where am i";
-    display: inline-block;
-    font-size: large;
-}
 
 #custom-percentage-input::placeholder {
     right: 50%;

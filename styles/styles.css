@@ -248,16 +248,6 @@ body {
   border: 2px solid #26c0ab;
 }
 
-.invalid-input {
-  border: 2px solid red;
-}
-
-.invalid-input input::after {
-  content: "Where am i";
-  display: inline-block;
-  font-size: large;
-}
-
 #custom-percentage-input::-webkit-input-placeholder {
   right: 50%;
   -webkit-transform: translate(50%, -50%);
