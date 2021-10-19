@@ -20,13 +20,16 @@ class Splitter {
     }
 
     calculate() {
-        if (this.bill === 0 || this.peopleAmount === 0 || this.percent === 0) {
-            return;
+        if (!this.bill || !this.peopleAmount || !this.percent) {
+            this.updateOutput(0, 0);
+            this.toggleResetButton();
+        } else {
+            const tipResult =
+                (this.bill / this.peopleAmount / 100) * this.percent;
+            const totalResult = this.bill / this.peopleAmount + tipResult;
+            this.updateOutput(tipResult, totalResult);
+            this.toggleResetButton(tipResult, totalResult);
         }
-        const tipResult = (this.bill / this.peopleAmount / 100) * this.percent;
-        const totalResult = this.bill / this.peopleAmount + tipResult;
-        this.updateOutput(tipResult, totalResult);
-        this.toggleResetButton(tipResult, totalResult);
     }
 
     updateOutput(tipResult, totalResult) {
