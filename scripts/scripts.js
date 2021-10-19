@@ -7,6 +7,7 @@ const resetBtn = document.querySelector(".reset-btn");
 const customPercentageInput = document.getElementById(
     "custom-percentage-input"
 );
+const selectTipSection = document.querySelector(".select-tip");
 
 class Splitter {
     percent = 10;
@@ -19,13 +20,29 @@ class Splitter {
     }
 
     calculate() {
-        if (this.bill === 0 || this.peopleAmount === 0 || this.percent === 0) {
-            return;
+        if (!this.bill || !this.peopleAmount || !this.percent) {
+            this.updateOutput(0, 0);
+            this.toggleResetButton();
+        } else {
+            const tipResult =
+                (this.bill / this.peopleAmount / 100) * this.percent;
+            const totalResult = this.bill / this.peopleAmount + tipResult;
+            this.updateOutput(tipResult, totalResult);
+            this.toggleResetButton(tipResult, totalResult);
         }
-        const tipResult = (this.bill / this.peopleAmount / 100) * this.percent;
-        const totalResult = this.bill / this.peopleAmount + tipResult;
+    }
+
+    updateOutput(tipResult, totalResult) {
         resultTotal.innerHTML = `$${totalResult.toFixed(2)}`;
         resultTip.innerHTML = `$${tipResult.toFixed(2)}`;
+    }
+
+    toggleResetButton(tipResult, totalResult) {
+        if (tipResult || totalResult) {
+            resetBtn.classList.add("btn-active");
+        } else {
+            resetBtn.classList.remove("btn-active");
+        }
     }
 
     setTipPercentage(tipInPercent) {
@@ -73,5 +90,14 @@ tipButtons.forEach((btn) => {
     btn.addEventListener("click", toggleClickTipPercentage);
 });
 
-console.log(resetBtn);
-resetBtn.addEventListener("click", splitter.reset);
+selectTipSection.addEventListener("click", (event) => {
+    [...tipButtons].forEach((tipButton) => {
+        const buttonClicked =
+            (event.target.id || event.target.parentNode.id) === tipButton.id;
+        if (buttonClicked) {
+            tipButton.classList.add("btn-active");
+        } else {
+            tipButton.classList.remove("btn-active");
+        }
+    });
+});
